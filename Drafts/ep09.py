@@ -29,7 +29,7 @@ while num >=numset:
 
 #Process: Can't believe this works.
 #Highly experimental, chaotic, optimistic approach.
-#Knowing right away I'm not pythagosas' best pal I went searching for all ways
+#Knowing right away I'm not pythagoras' best pal I went searching for all ways
 #to write the pythagoras formula- in hopes of getting the given a+b+c(1000) isolated
 #enough to squeeze it for more information. I found one at the website commented above.
 #This pythagoras proof formula writes the triangles' a+b+c for its semiperimeter,
