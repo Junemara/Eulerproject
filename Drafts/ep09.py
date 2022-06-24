@@ -4,17 +4,10 @@
 #There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 #Find the product abc.
 #inspo: https://www.cut-the-knot.org/pythagoras/
-set = 1000
-a = 1
-b = 1000
-c = 500
-for n in range(1,500):
- if a < b:
-   a += 1
- if c > b:
-    c -= 1
- if b < c:
-    b += 1
 
- if a + b + c == set:
-    print(a, b, c)
+#Area of a triangle is obviously rp, where r is the inradius and p = (a + b + c)/2 the semiperimeter of the triangle. From the diagram, the hypothenuse c = (a - r) + (b - r), or r = p - c. The area of the triangle then is computed in two ways:
+#p(p - c) = ab/2, which is equivalent to
+#(a + b + c)(a + b - c) = 2ab, or (a + b)² - c² = 2ab. And finally
+#a² + b² - c² = 0.
+
+p = 1000/2

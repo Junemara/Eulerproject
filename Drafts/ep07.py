@@ -9,3 +9,11 @@ while c < nth:
      c += 1
 
 print(i)
+
+#Process: first tried googling some formula listing all primenumbers,
+#Paul on quora wrote there is none. Figured I'd have to loop for and check
+#each natural number for primeness, and count the prime ones all the way to the nth.
+#The weird part was setting a sensible diviseability range for any nth,
+#and the most satisfying to figure out.
+#Also first time finding and using all/any-function,
+#definetily not the first time needing it. Bliss.
