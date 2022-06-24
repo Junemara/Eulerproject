@@ -32,7 +32,7 @@ while num >=249:
     num = num - 1
 
 #Process: Can't believe this works.
-#Highly experimental, chaothic, optimistic approach.
+#Highly experimental, chaotic, optimistic approach.
 #Knowing right away I'm not pythagosas' best pal I went searching for all ways
 #to write the pythagoras formula- in hopes of getting the given a+b+c(1000) isolated
 #enough to squeeze it for more information. I found one at the website commented above.
