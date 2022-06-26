@@ -9,9 +9,13 @@ from operator import add
 
 MILLION_NUMBERS = list(range(2,10))
 
-filtered = list(filter(lambda number: not any(number % n == 0 for n in range(2, number)), MILLION_NUMBERS))
+filtered = filter(lambda number: not any(number % n == 0 for n in range(2, number)), MILLION_NUMBERS)
+#mja = reduce(lambda x,y: x+y, filtered)
 
 print(filtered)
+
+#hehe = reduce(lambda a,d: 10*a+d, [1,2,3,4,5,6,7,8], 0)
+
 #a = np.array(filtered)
 #print(filtered.cumsum())
 #blabla = [number for number in MILLION_NUMBERS if not any(number % n == 0 for n in range(2, number))]
