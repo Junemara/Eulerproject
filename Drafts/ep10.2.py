@@ -9,7 +9,8 @@ from operator import add
 
 MILLION_NUMBERS = list(range(2,10))
 
-filtered = np.cumsum(filter(lambda number: not any(number % n == 0 for n in range(2, number)), MILLION_NUMBERS))
+filtered = list(filter(lambda number: not any(number % n == 0 for n in range(2, number)), MILLION_NUMBERS))
+
 print(filtered)
 #a = np.array(filtered)
 #print(filtered.cumsum())
