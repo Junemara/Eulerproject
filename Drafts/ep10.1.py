@@ -8,3 +8,4 @@ blabla = [number for number in MILLION_NUMBERS if not any(number % n == 0 for n 
 print(sum(blabla))
 
 #this also doesn't work with the big range...
+#Want to keep it. Creating a new file for trying things (10.2.py)
