@@ -10,23 +10,39 @@
 #28: 1,2,4,7,14,28
 #We can see that 28 is the first triangle number to have over five divisors.
 #What is the value of the first triangle number to have over five hundred divisors?
-
-find = 7
-f = 1
 n = 1
-tn = int(n * (n + 1) / 2)
-tn2 = int(tn/2)
-while f < find:
- n += 1
- for i in range(1,tn2):
-   if tn % i == 0:
-    f += 1
-    if f >= find:
-     break
-print(tn,n,f)
+
+from functools import reduce
+
+def tringl(n):
+  return int(n*(n+1)/2)
+
+tn = tringl(n)
+
+def divisors(tn):
+  return len((reduce(list.__add__, ([i, tn//i] for i in range(1, int(tn**0.5) + 1) if not tn % i))))
+
+for i in range(1,n+1):
+  nn = tringl(i)
+  f = divisors(nn)
+  while f < 4:
+     i += 1
+
+print(f, tn, n)
+
+
+
+
+
 
 
 #Process: So I'm thinking I'm going to loop ns and check number of divisors for each trianglenumber,
 #but it's getting messy real fast. Had a code working with the example, but it's no use for bigger numbers(again).
-#...Some hours later still having problem writing efficient code. There may be something fundamentally
+#...Some hours later still having problems writing efficient code. There may be something fundamentally
 #inefficient in how I'm thinking of solving this problem.
+#By manually testing different ns for it's divisors, n could be anywhere, and the loop is already slowing down at 10000(2.8 seconds to run!).
+#Found this blog https://alexwlchan.net/2019/07/finding-divisors-with-python. Didn't do much with it,
+#but figured it is relevant.
+#Finally I found this factors-code using reduce at https://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python
+#Thanks to user "agf", I thought I would get away with another short cut,
+#but turns out I still can't figure out how to loop my way ahead with this.
