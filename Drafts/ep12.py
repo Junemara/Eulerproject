@@ -17,32 +17,36 @@ from functools import reduce
 def tringl(n):
   return int(n*(n+1)/2)
 
-tn = tringl(n)
-
 def divisors(tn):
   return len((reduce(list.__add__, ([i, tn//i] for i in range(1, int(tn**0.5) + 1) if not tn % i))))
 
-for i in range(1,n+1):
+def find(n):
+ i = 1
+ for i in range(1,100000):
   nn = tringl(i)
   f = divisors(nn)
-  while f < 4:
-     i += 1
+  i += 1
+  if f > 500:
+   break
+ return nn, f
 
-print(f, tn, n)
-
-
-
-
-
-
+print(find(n))
 
 #Process: So I'm thinking I'm going to loop ns and check number of divisors for each trianglenumber,
 #but it's getting messy real fast. Had a code working with the example, but it's no use for bigger numbers(again).
+
 #...Some hours later still having problems writing efficient code. There may be something fundamentally
 #inefficient in how I'm thinking of solving this problem.
-#By manually testing different ns for it's divisors, n could be anywhere, and the loop is already slowing down at 10000(2.8 seconds to run!).
-#Found this blog https://alexwlchan.net/2019/07/finding-divisors-with-python. Didn't do much with it,
-#but figured it is relevant.
+#Now manually testing different ns for it's divisors, n could be anywhere, and the loop is already slowing down at 10000(2.8 seconds to run!).
+#Found this blog https://alexwlchan.net/2019/07/finding-divisors-with-python. Didn't do much with this, but figured it is relevant.
+
 #Finally I found this factors-code using reduce at https://stackoverflow.com/questions/6800193/what-is-the-most-efficient-way-of-finding-all-the-factors-of-a-number-in-python
 #Thanks to user "agf", I thought I would get away with another short cut,
 #but turns out I still can't figure out how to loop my way ahead with this.
+
+#Even more hours later, mindlessly fidgeting this code- I suddenly got some output-
+#and shockingly got the right answer... finished in 4.373 seconds that is.
+#Before putting the code in functions, it was badly nested with variables trying to define eachother.
+#First time getting some function action without using a template. Not sure if I needed three separate functions, don't care.
+#Forgot how to do the basic n+=1 looping, so the solution was setting a random big number for range in find().
+#No spesific takeaways from this, just that function calls can manage what a nesty mess can't.
