@@ -10,12 +10,7 @@
 #NOTE: As there are only 16384 routes, it is possible to solve this problem by trying every route. However,
 #Problem 67, is the same challenge with a triangle containing one-hundred rows; it cannot be solved by brute force, and requires a clever method! ;o)
 
-f = open("drafts\ep18input.txt")
-lines = f.readlines()
-lines = [int(line) for line in lines]
-
-g = []
-for line in lines:
-    g.append(line[-1])
-
-print(g)
+with open("Drafts\ep18input.txt") as f:
+    for line in f:
+        print(list(map(int,line.split())))
+        
