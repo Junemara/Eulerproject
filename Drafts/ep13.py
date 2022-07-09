@@ -1,14 +1,12 @@
 #Work out the first ten digits of the sum of the following one-hundred 50-digit numbers.
 
-f = open("drafts\ep13input.txt")
+f = open("drafts\ep22nums.txt")
 lines = f.readlines()
 lines = [line.rstrip() for line in lines]
 
-def linsum(lines):
-    return str(sum(map(int, lines)))
 
-res = linsum(lines)[:10]
-print(res)
+print(str(sum(map(int, lines))))
+
 
 
 #Process: so I spent hours scratching my head about getting the output 22660 over and over,

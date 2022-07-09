@@ -56,18 +56,26 @@ def wordsum(filename):
 
 
 def sumnums(filename):
-      infile = open(filename)
-      nums = []
-      for e in infile:
-        temp = e.split()
-        for i in temp:
-          nums.append(i)
-      infile.close()
-      
-      return sum(map(int, nums))
-ferdig = sumnums("Drafts\ep22nums.txt")
+    infile = open(filename)
+    nums = []
+    for e in infile:
+      temp = e.split(",")
+      for i in temp:
+        #i = i.rstrip("'") #replace("'", ""))
+        o = int(i)
+        #mint = int(float(i))
+        nums.append(o)
+    infile.close()
+    return nums
+#ferdig = sumnums("Drafts\ep22nums.txt")
+#print(ferdig)
 
-print(ferdig)
+with open('drafts\ep22nums.txt','r') as numf:
+    for a in numf:
+     temp = a.split(',')
+    total = sum(int(e) for e in temp if e.strip())
+print(total)
+
 
 
 #Process: assuming from previous research that the inputfile can be sorted and edited,
@@ -94,3 +102,11 @@ print(ferdig)
 #from the text file being dragged into the wordval() funnction. Now I have to sum the damn thing.
 
 #Getting typeerrors, and some hellishly long number as output(cant even reach the end of it.)
+
+#Getting ValueError: invalid literal for int() with base 10: '' a hundred thousand bazillion times I'm under the watah
+
+#Finally got to sum the numbers. The solution was to split() by commas before writing the list into the sum function.
+#Mind is fried. Wasn't sure what exactly got taken in in the first "for x in file", but that's where I needed to do the split at least.
+
+#Other than that- a lot of redundant code, needed it to keep track of the steps and to beter visualize,
+#and focus on getting the basics of handling input/output files.
